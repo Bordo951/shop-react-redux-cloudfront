@@ -69,3 +69,17 @@ Combination of `cloudfront:setup` and `cloudfront:build:deploy` commands with or
 ### `serverless:remove`
 
 Remove an entire stack configured in `serverless.yml` via CloudFormation.
+
+## Module 2: Serving SPA in AWS
+
+### Links
+
+#### Task 1: ✔️ completed
+
+#### Task 2: ✔️ completed
+
+#### Task 3: ✔️ completed
+
+CloudFront: https://d3kgw2jxpum300.cloudfront.net/
+
+S3: https://berry-shop.s3.us-east-1.amazonaws.com/
