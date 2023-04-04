@@ -18,6 +18,7 @@ test("Renders products list", async () => {
       description: "Product 1 description",
       price: 1,
       count: 1,
+      imagePath: "https://cdn.vectorstock.com/i/preview-1x/01/44/blackberry-vector-1270144.jpg"
     },
     {
       id: "2",
@@ -25,6 +26,7 @@ test("Renders products list", async () => {
       description: "Product 2 description",
       price: 2,
       count: 2,
+      imagePath: "https://cdn.vectorstock.com/i/preview-1x/01/44/blackberry-vector-1270144.jpg"
     },
   ];
   server.use(
