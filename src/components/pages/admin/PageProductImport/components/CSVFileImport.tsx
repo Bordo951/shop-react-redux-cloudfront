@@ -1,6 +1,6 @@
 import React from "react";
-import axios from "axios";
 import Typography from "@mui/material/Typography";
+import axios from "axios";
 import Box from "@mui/material/Box";
 
 type CSVFileImportProps = {
@@ -46,7 +46,6 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
         body: file,
       });
       console.log("Result: ", result);
-      removeFile();
     } catch (error) {
       console.log(error);
     }
@@ -62,7 +61,14 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       ) : (
         <div>
           <button onClick={removeFile}>Remove file</button>
-          <button onClick={() => uploadFile(file)}>Upload file</button>
+          <button
+            onClick={() => {
+              uploadFile(file);
+              setFile(undefined);
+            }}
+          >
+            Upload file
+          </button>
         </div>
       )}
     </Box>

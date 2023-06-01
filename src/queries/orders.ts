@@ -33,13 +33,28 @@ export function useUpdateOrderStatus() {
   );
 }
 
+export type Values = {
+  payment: {
+    type: string;
+  };
+  delivery: {
+    type: string;
+    address: string;
+  };
+  comments: string;
+};
+
 export function useSubmitOrder() {
-  return useMutation((values: Omit<Order, "id">) => {
-    return axios.put<Omit<Order, "id">>(`${API_PATHS.order}/order`, values, {
-      headers: {
-        Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
-      },
-    });
+  return useMutation((values: Values) => {
+    return axios.post<Values>(
+      `${API_PATHS.order}/api/profile/cart/checkout`,
+      values,
+      {
+        headers: {
+          Authorization: `Basic Qm9yZG85NTE6IFRFU1RfUEFTU1dPUkQ`,
+        },
+      }
+    );
   });
 }
 
@@ -56,7 +71,7 @@ export function useDeleteOrder() {
   return useMutation((id: string) =>
     axios.delete(`${API_PATHS.order}/order/${id}`, {
       headers: {
-        Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+        Authorization: `Basic Qm9yZG85NTE6IFRFU1RfUEFTU1dPUkQ`,
       },
     })
   );
